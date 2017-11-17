@@ -8,5 +8,12 @@ namespace rockPaperScissorsLizardSpock
 {
     class Game
     {
+        Player Name;
+        Player Opponent Name;
+        
+        public void ChooseGame()
+        {
+
+        }
     }
 }
