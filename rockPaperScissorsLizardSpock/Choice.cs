@@ -8,11 +8,11 @@ namespace rockPaperScissorsLizardSpock
 {
     class Choice
     {
-        string "q" = string "Rock";
-        string "w" = string "Paper";
-        string "e" = string "Scissors";
-        string "r" = string "Lizard";
-        string "t" = string "Spock";
+        string answerQ = "Rock";
+        string answerW = "Paper";
+        string answerE = "Scissors";
+        string answerR = "Lizard";
+        string answerT = "Spock";
 
         public void CheckChoicePVE()
         {

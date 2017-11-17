@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace rockPaperScissorsLizardSpock
 {
-    class PVEGame
+    class PVEGame : Game
     {
+
     }
 }
