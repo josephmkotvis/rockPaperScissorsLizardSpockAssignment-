@@ -49,25 +49,25 @@ namespace rockPaperScissorsLizardSpock
         }
         public void ChoosePlayer1Choice()
         {
-            Console.WriteLine("Choose one of the following:" + Environment.NewLine + "Q) Rock" + Environment.NewLine + "W) Paper" + Environment.NewLine + "E) Scissors" + Environment.NewLine + "R) Lizard" + Environment.NewLine + "T) Spock");
+            Console.WriteLine("Player 1:" + Environment.NewLine + "Choose one of the following:" + Environment.NewLine + "1) Rock" + Environment.NewLine + "2) Paper" + Environment.NewLine + "3) Scissors" + Environment.NewLine + "4) Lizard" + Environment.NewLine + "5) Spock");
             char player1Input = Console.ReadKey(true).KeyChar;
-            if (player1Input.Equals('Q'))
+            if (player1Input.Equals('1'))
             {
                 player1Choice = "Rock";
             }
-            else if (player1Input.Equals('W'))
+            else if (player1Input.Equals('2'))
             {
                 player1Choice = "Paper";
             }
-            else if (player1Input.Equals('E'))
+            else if (player1Input.Equals('3'))
             {
                 player1Choice = "Scissors";
             }
-            else if (player1Input.Equals('R'))
+            else if (player1Input.Equals('4'))
             {
                 player1Choice = "Lizard";
             }
-            else if (player1Input.Equals('T'))
+            else if (player1Input.Equals('5'))
             {
                 player1Choice = "Spock";
             }
@@ -109,29 +109,29 @@ namespace rockPaperScissorsLizardSpock
         }
         public void ChoosePlayer2HumanChoice()
         {
-            Console.WriteLine("Choose one of the following:" + Environment.NewLine + "Q) Rock" + Environment.NewLine + "W) Paper" + Environment.NewLine + "E) Scissors" + Environment.NewLine + "R) Lizard" + Environment.NewLine + "T) Spock");
+            Console.WriteLine("Player 2:" + Environment.NewLine + "Choose one of the following:" + Environment.NewLine + "1) Rock" + Environment.NewLine + "2) Paper" + Environment.NewLine + "3) Scissors" + Environment.NewLine + "4) Lizard" + Environment.NewLine + "5) Spock");
             char player2Input = Console.ReadKey(true).KeyChar;
-            if (player2Input.Equals('Q'))
+            if (player2Input.Equals('1'))
             {
                 player2Choice = "Rock";
                 player2ChoiceNumber = 1;
             }
-            else if (player2Input.Equals('W'))
+            else if (player2Input.Equals('2'))
             {
                 player2Choice = "Paper";
                 player2ChoiceNumber = 2;
             }
-            else if (player2Input.Equals('E'))
+            else if (player2Input.Equals('3'))
             {
                 player2Choice = "Scissors";
                 player2ChoiceNumber = 3;
             }
-            else if (player2Input.Equals('R'))
+            else if (player2Input.Equals('4'))
             {
                 player2Choice = "Lizard";
                 player2ChoiceNumber = 4;
             }
-            else if (player2Input.Equals('T'))
+            else if (player2Input.Equals('5'))
             {
                 player2Choice = "Spock";
                 player2ChoiceNumber = 5;
