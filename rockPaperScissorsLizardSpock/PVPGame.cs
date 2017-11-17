@@ -8,5 +8,9 @@ namespace rockPaperScissorsLizardSpock
 {
     class PVPGame : Game
     {
+        public void RunPVPGame()
+        {
+            // create loop to run rounds until ebst of 3.
+        }
     }
 }

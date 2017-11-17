@@ -15,5 +15,13 @@ namespace rockPaperScissorsLizardSpock
         {
 
         }
+        public void WinningRoundCondition()
+        {
+
+        }
+        public void WinningGameCondition()
+        {
+
+        }
     }
 }

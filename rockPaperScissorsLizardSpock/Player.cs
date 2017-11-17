@@ -8,5 +8,8 @@ namespace rockPaperScissorsLizardSpock
 {
     class Player
     {
+        string name;
+        Score.score == 0;
+        
     }
 }
