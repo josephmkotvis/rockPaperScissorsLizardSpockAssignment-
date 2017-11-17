@@ -9,12 +9,26 @@ namespace rockPaperScissorsLizardSpock
     class PVEGame : Game
     {
         Player2name= Computer.name;
-        public void RunPVEGame()
+        public void NotifyPVEChoice()
         {
+            Console.WriteLine("You have chosen to play the PVE version of this game");
+            RunPVEGame();
+        }
+        public void RunPVEGame(Game game)
+        {
+            while (game.winningCondition == false)
+            {
+                DisplayChoosePrompt();
+                SendChoices();
+                CheckChoices();
+
+
+
+            }
             // create loop to run round checking answers
             // could do while loops for both winning conditions
-                // while winning condition! 
-                       //while choice 1 = choice2, run 
+            // while winning condition! 
+            //while choice 1 = choice2, run 
 
         }
         public void DisplayChoosePrompt()

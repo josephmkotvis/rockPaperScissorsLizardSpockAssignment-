@@ -9,7 +9,11 @@ namespace rockPaperScissorsLizardSpock
     class Score
     { public void TrackPlayerScores()
         {
-          
+            List<double> Scores = new List<double>
+            {
+                0,
+                0
+            };
             // set player 1 score @ 0 & [0]
             //set player 2 score @ 0 & [1]
 

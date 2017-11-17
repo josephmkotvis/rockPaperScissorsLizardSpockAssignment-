@@ -9,8 +9,12 @@ namespace rockPaperScissorsLizardSpock
     class PVPGame : Game
     {
         Player2name= Player.player2.name;
-        public void RunPVPGame()
+        public void RunPVPGame(Game game)
         {
+          while (game.winningCondition == false)
+            {
+
+            }
             // create loop to run rounds until best of 3.
                 // could do while loops for both winning conditions
         }
