@@ -8,6 +8,6 @@ namespace rockPaperScissorsLizardSpock
 {
     class Computer : Player
     {
-        string name = "Hardest Opponent Ever";
+        //string name = "Hardest Opponent Ever";
     }
 }

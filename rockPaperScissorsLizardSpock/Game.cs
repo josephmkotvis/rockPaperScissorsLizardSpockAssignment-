@@ -1,64 +1,159 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace rockPaperScissorsLizardSpock
 {
     class Game
     {
-        string player1Name = Player.player1.name;
+        string player1Name;
         string player2Name;
         string player2Status;
-        string p1Choice;
-        string p2Choice;
+        string player1Choice;
+        double player1ChoiceNumber;
+        string player2Choice;
+        double player2ChoiceNumber;
         string RoundWinner;
         double player1Score =0;
         double player2Score =0;
         public bool winningCondition = false;
-        string hiddenKey= Console.ReadKey();
-        public void ChooseGame(PVEGame pveGame, PVPGame pvpGame)
+        public void ChooseGame()
         {
             Console.WriteLine("Pick one of the following to play against:" + Environment.NewLine + "1)Computer" + Environment.NewLine + "2) Another Player");
             string gameChosen = Console.ReadLine();
             if (gameChosen.Equals("1"))
             {
                 player2Status = "Computer";
+                RunGame();
             }
             else if (gameChosen.Equals("2"))
             {
                 player2Status = "Player2";
+                RunGame();
             }
             else
             {
                 Console.WriteLine("Please choose the number associated with the game choice.");
-                ChooseGame(pveGame, pvpGame);
+                ChooseGame();
             }
 
         }
         public void RunGame()
         {
-            while (!winningCondition)
+            do
             {
                 ChoosePlayer1Choice();
                 ChoosePlayer2Choice();
                 CheckChoices();
                 SetPlayerScores();
-            }
+            } while (winningCondition == false);
 
         }
         public void ChoosePlayer1Choice()
         {
-            Console.WriteLine("Choose one of the following:);
+            Console.WriteLine("Choose one of the following:" + Environment.NewLine + "Q) Rock" + Environment.NewLine + "W) Paper" + Environment.NewLine + "E) Scissors" + Environment.NewLine + "R) Lizard" + Environment.NewLine + "T) Spock");
+            char player1Input = Console.ReadKey(true).KeyChar;
+            if (player1Input.Equals('Q'))
+            {
+                player1Choice = "Rock";
+            }
+            else if (player1Input.Equals('W'))
+            {
+                player1Choice = "Paper";
+            }
+            else if (player1Input.Equals('E'))
+            {
+                player1Choice = "Scissors";
+            }
+            else if (player1Input.Equals('R'))
+            {
+                player1Choice = "Lizard";
+            }
+            else if (player1Input.Equals('T'))
+            {
+                player1Choice = "Spock";
+            }
+            else
+            {
+                Console.WriteLine("Please enter a correct number matching to your choise (1-5)");
+                ChoosePlayer1Choice();
+            }
+            // Let user know its time to choose
+            //direct to the choose/calcualte function in the player class
+        }
+        public void ChoosePlayer2ComputerChoice()
+        {
+            Random luck = new Random();
+            int randomComputerChoice = luck.Next(0, 6);
+            switch (randomComputerChoice)
+            {
+                case 1:
+                    player2Choice = "Rock";
+                    player2ChoiceNumber = 1;
+                    break;
+                case 2:
+                    player2Choice = "Paper";
+                    player2ChoiceNumber = 2;
+                    break;
+                case 3:
+                    player2Choice = "Scissors";
+                    player2ChoiceNumber = 3;
+                    break;
+                case 4:
+                    player2Choice = "Lizard";
+                    player2ChoiceNumber = 4;
+                    break;
+                case 5:
+                    player2Choice = "Spock";
+                    player2ChoiceNumber = 5;
+                    break;
+            }
+        }
+        public void ChoosePlayer2HumanChoice()
+        {
+            Console.WriteLine("Choose one of the following:" + Environment.NewLine + "Q) Rock" + Environment.NewLine + "W) Paper" + Environment.NewLine + "E) Scissors" + Environment.NewLine + "R) Lizard" + Environment.NewLine + "T) Spock");
+            char player2Input = Console.ReadKey(true).KeyChar;
+            if (player2Input.Equals('Q'))
+            {
+                player2Choice = "Rock";
+                player2ChoiceNumber = 1;
+            }
+            else if (player2Input.Equals('W'))
+            {
+                player2Choice = "Paper";
+                player2ChoiceNumber = 2;
+            }
+            else if (player2Input.Equals('E'))
+            {
+                player2Choice = "Scissors";
+                player2ChoiceNumber = 3;
+            }
+            else if (player2Input.Equals('R'))
+            {
+                player2Choice = "Lizard";
+                player2ChoiceNumber = 4;
+            }
+            else if (player2Input.Equals('T'))
+            {
+                player2Choice = "Spock";
+                player2ChoiceNumber = 5;
+            }
+            else
+            {
+                Console.WriteLine("Please enter a correct number matching to your choise (1-5)");
+                ChoosePlayer2Choice();
+            }
             // Let user know its time to choose
             //direct to the choose/calcualte function in the player class
         }
         public void ChoosePlayer2Choice()
         {
-
-            // Let user know its time to choose
-            //direct to the choose/calcualte function in the player class
+            if (player2Status == "Player2")
+            {
+                ChoosePlayer2HumanChoice();
+            }
+            else if (player2Status == "Computer")
+            {
+                ChoosePlayer2ComputerChoice();
+            }
         }
         public void WinningRoundCondition()
         {
