@@ -8,12 +8,9 @@ namespace rockPaperScissorsLizardSpock
 {
     class Choice
     {
-        string answerQ = "Rock";
-        string answerW = "Paper";
-        string answerE = "Scissors";
-        string answerR = "Lizard";
-        string answerT = "Spock";
-
+        string Game.p1Choice;
+        string Game.p2Choice;
+        //might not even need these up here
         public void CheckChoicePVE()
         {
 

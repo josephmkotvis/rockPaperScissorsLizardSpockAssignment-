@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace rockPaperScissorsLizardSpock
 {
-    class Computer : Player2
+    class Computer : Player
     {
+        string name = "Hardest Opponent Ever";
     }
 }
