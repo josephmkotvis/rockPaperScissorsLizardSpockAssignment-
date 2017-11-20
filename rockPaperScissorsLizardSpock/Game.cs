@@ -11,7 +11,7 @@ namespace rockPaperScissorsLizardSpock
         double player1ChoiceNumber;
         string player2Choice;
         double player2ChoiceNumber;
-        string RoundWinner;
+        string roundWinner;
         double player1Score =0;
         double player2Score =0;
         public bool winningCondition = false;
@@ -44,6 +44,7 @@ namespace rockPaperScissorsLizardSpock
                 ChoosePlayer2Choice();
                 CheckChoices();
                 SetPlayerScores();
+                WinningGameCondition();
             } while (winningCondition == false);
 
         }
@@ -54,22 +55,28 @@ namespace rockPaperScissorsLizardSpock
             if (player1Input.Equals('1'))
             {
                 player1Choice = "Rock";
+                player1ChoiceNumber = 0;
+                return ;
             }
             else if (player1Input.Equals('2'))
             {
                 player1Choice = "Paper";
+                player1ChoiceNumber = 1;
             }
             else if (player1Input.Equals('3'))
             {
                 player1Choice = "Scissors";
+                player1ChoiceNumber = 2;
             }
             else if (player1Input.Equals('4'))
             {
                 player1Choice = "Lizard";
+                player1ChoiceNumber = 3;
             }
             else if (player1Input.Equals('5'))
             {
                 player1Choice = "Spock";
+                player1ChoiceNumber = 4;
             }
             else
             {
@@ -87,23 +94,23 @@ namespace rockPaperScissorsLizardSpock
             {
                 case 1:
                     player2Choice = "Rock";
-                    player2ChoiceNumber = 1;
+                    player2ChoiceNumber = 0;
                     break;
                 case 2:
                     player2Choice = "Paper";
-                    player2ChoiceNumber = 2;
+                    player2ChoiceNumber = 1;
                     break;
                 case 3:
                     player2Choice = "Scissors";
-                    player2ChoiceNumber = 3;
+                    player2ChoiceNumber = 2;
                     break;
                 case 4:
                     player2Choice = "Lizard";
-                    player2ChoiceNumber = 4;
+                    player2ChoiceNumber = 3;
                     break;
                 case 5:
                     player2Choice = "Spock";
-                    player2ChoiceNumber = 5;
+                    player2ChoiceNumber = 4;
                     break;
             }
         }
@@ -114,27 +121,27 @@ namespace rockPaperScissorsLizardSpock
             if (player2Input.Equals('1'))
             {
                 player2Choice = "Rock";
-                player2ChoiceNumber = 1;
+                player2ChoiceNumber = 0;
             }
             else if (player2Input.Equals('2'))
             {
                 player2Choice = "Paper";
-                player2ChoiceNumber = 2;
+                player2ChoiceNumber = 1;
             }
             else if (player2Input.Equals('3'))
             {
                 player2Choice = "Scissors";
-                player2ChoiceNumber = 3;
+                player2ChoiceNumber = 2;
             }
             else if (player2Input.Equals('4'))
             {
                 player2Choice = "Lizard";
-                player2ChoiceNumber = 4;
+                player2ChoiceNumber = 3;
             }
             else if (player2Input.Equals('5'))
             {
                 player2Choice = "Spock";
-                player2ChoiceNumber = 5;
+                player2ChoiceNumber = 4;
             }
             else
             {
@@ -160,15 +167,22 @@ namespace rockPaperScissorsLizardSpock
             // if player1choice>player2 Choice
 
         }
-        public void WinningGameCondition()
+        public bool WinningGameCondition()
         {
+            winningCondition = false;
             if (player1Score == 2)
             {
                 Console.WriteLine("Congratulations!" + player1Name + "has become victorious! GG!");
+                return true;
             }
             else if (player2Score == 2)
             {
                 Console.WriteLine("Congratulations!" +player2Name + "has become victorious! GG!");
+                return true;
+            }
+            else
+            {
+                return false;
             }
             // check to see if score hit 2 (out of the 3 rounds)
                                     // or 3 (out of the 5 rounds)
@@ -179,7 +193,28 @@ namespace rockPaperScissorsLizardSpock
         //}
         public void CheckChoices()
         {
-
+            double roundWinnerChecked = ((5 + player1ChoiceNumber - player2ChoiceNumber) % 5);
+            if (roundWinnerChecked == 1)
+            {
+                roundWinner = "Player1";
+            }
+            else if (roundWinnerChecked == 3)
+            {
+                roundWinner = "Player1";
+            }
+            else if (roundWinnerChecked == 2)
+            {
+                roundWinner = "Player2";
+            }
+            else if (roundWinnerChecked == 4)
+            {
+                roundWinner = "Player2";
+            }
+            else
+            {
+                roundWinner = "Neither";
+               
+            }
         }
         public void AddPlayer1Score()
         {
@@ -191,6 +226,19 @@ namespace rockPaperScissorsLizardSpock
         }
         public void SetPlayerScores()
         {
+           if (roundWinner == "Player1")
+            {
+                AddPlayer1Score();
+            }
+           else if (roundWinner == "Player2")
+            {
+                AddPLayer2Score();
+            }
+            else if ( roundWinner == "Neither")
+            {
+                Console.WriteLine("You have tied! Try again.");
+            }
+            
             //Send who was winner to the function to update the score
         }
     }
