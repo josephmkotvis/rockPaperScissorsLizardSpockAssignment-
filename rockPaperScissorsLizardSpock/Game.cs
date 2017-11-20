@@ -30,12 +30,12 @@ namespace rockPaperScissorsLizardSpock
         {
             if (player1.score == 2)
             {
-                Console.WriteLine("Congratulations! " + player1.name + " has become victorious! GG!");
+                Console.WriteLine(Environment.NewLine + "Congratulations! " + player1.name + " has become victorious! GG!" + Environment.NewLine);
                 winningCondition = true;
             }
             else if (player2.score == 2)
             {
-                Console.WriteLine("Congratulations! " + player2.name + " has become victorious! GG!");
+                Console.WriteLine(Environment.NewLine + "Congratulations! " + player2.name + " has become victorious! GG!" + Environment.NewLine);
                 winningCondition = true;
             }
         }
@@ -68,17 +68,17 @@ namespace rockPaperScissorsLizardSpock
         {
            if (roundWinner == "Player1")
             {
-                Console.WriteLine(player1.name + " has won this round with " + player1.choice + " against " + player2.name + "'s " + player2.choice + ".");
+                Console.WriteLine(Environment.NewLine + player1.name + " has won this round with " + player1.choice + " against " + player2.name + "'s " + player2.choice + ".");
                 player1.AddScore();
             }
            else if (roundWinner == "Player2")
             { 
-                Console.WriteLine(player2.name + " has won this round with " + player2.choice + " against " + player1.name + "'s " + player1.choice + ".");
+                Console.WriteLine(Environment.NewLine + player2.name + " has won this round with " + player2.choice + " against " + player1.name + "'s " + player1.choice + ".");
                 player2.AddScore();
             }
             else if ( roundWinner == "Neither")
             {
-                Console.WriteLine("There was a tie with " + player1.name + "'s " + player1.choice + " against " + player2.name + "'s " + player2.choice + "! Try again.");
+                Console.WriteLine(Environment.NewLine + "There was a tie with " + player1.name + "'s " + player1.choice + " against " + player2.name + "'s " + player2.choice + "! Try again.");
             }
         }
         public void AskToPlayAgain(Player player1, Player2 player2)

@@ -15,7 +15,6 @@ namespace rockPaperScissorsLizardSpock
             Game Round = new Game();
             Round.RunGame(Player1, Player2);
             Console.ReadKey();
-
         }
     }
 }

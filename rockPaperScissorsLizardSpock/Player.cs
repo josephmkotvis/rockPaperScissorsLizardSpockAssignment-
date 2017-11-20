@@ -13,8 +13,6 @@ namespace rockPaperScissorsLizardSpock
         public double choiceNumber;
         public double score = 0;
         public double playerNumber;
-
-
         public Player(string name, string choice, double choiceNumber, double score, double playerNumber)
         {
             this.name = name;
@@ -23,15 +21,14 @@ namespace rockPaperScissorsLizardSpock
             this.score = score;
             this.playerNumber = playerNumber;
         }
-
         public void WritePlayerName()
         {
-            Console.WriteLine(name + ", write your name.");
+            Console.WriteLine(Environment.NewLine + "" + name + ", write your name.");
             name = Console.ReadLine();
         }
         public void ChoosePlayerChoice()
         {
-            Console.WriteLine(name + ":" + Environment.NewLine + "Choose one of the following:" + Environment.NewLine + "1) Rock" + Environment.NewLine + "2) Paper" + Environment.NewLine + "3) Scissors" + Environment.NewLine + "4) Spock" + Environment.NewLine + "5) Lizard");
+            Console.WriteLine(Environment.NewLine + "" + name + ":" + Environment.NewLine + "Choose one of the following:" + Environment.NewLine + "1) Rock" + Environment.NewLine + "2) Paper" + Environment.NewLine + "3) Scissors" + Environment.NewLine + "4) Spock" + Environment.NewLine + "5) Lizard");
             char playerInput = Console.ReadKey(true).KeyChar;
             if (playerInput.Equals('1'))
             {
@@ -55,7 +52,7 @@ namespace rockPaperScissorsLizardSpock
             }
             else
             {
-                Console.WriteLine("Please enter a correct number matching to your choise (1-5)");
+                Console.WriteLine(Environment.NewLine + "Please enter a correct number matching to your choise (1-5)");
                 ChoosePlayerChoice();
             }
         }
