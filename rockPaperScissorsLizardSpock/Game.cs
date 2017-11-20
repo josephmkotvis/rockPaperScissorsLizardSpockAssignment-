@@ -80,7 +80,7 @@ namespace rockPaperScissorsLizardSpock
         }
         public void AskToPlayAgain(Player player1, Player2 player2)
         {
-            Console.WriteLine("Would you like to play again? (y/n)";
+            Console.WriteLine("Would you like to play again? (y/n)");
             string playerReplayResponse = Console.ReadLine();
             if (playerReplayResponse == "y")
             {
