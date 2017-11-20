@@ -66,29 +66,21 @@ namespace rockPaperScissorsLizardSpock
                
             }
         }
-        public void AddPlayer1Score(Player player1)
-        {
-            player1.score++; 
-        }
-        public void AddPLayer2Score(Player2 player2)
-        {
-            player2.score++;
-        }
         public void SetPlayerScores(Player player1, Player2 player2)
         {
            if (roundWinner == "Player1")
             {
                 Console.WriteLine(player1.name + "has won this round with " + player1.choice + " against" + player2.name + "'s " + player2.choice + ".");
-                AddPlayer1Score(player1);
+                player1.AddScore();
             }
            else if (roundWinner == "Player2")
             { 
-                Console.WriteLine(player2.name + "has won this round with" + player2.choice + " against" + player1.name + "'s " + player1.choice + ".");
-                AddPLayer2Score(player2);
+                Console.WriteLine(player2.name + " has won this round with " + player2.choice + " against " + player1.name + "'s " + player1.choice + ".");
+                player2.AddScore();
             }
             else if ( roundWinner == "Neither")
             {
-                Console.WriteLine("You have tied with " + player1.name + "'s " + player1.choice + " against " + player2.name + "'s " + player2.choice + "! Try again.");
+                Console.WriteLine("There was a tie with " + player1.name + "'s " + player1.choice + " against " + player2.name + "'s " + player2.choice + "! Try again.");
             }
         }
     }

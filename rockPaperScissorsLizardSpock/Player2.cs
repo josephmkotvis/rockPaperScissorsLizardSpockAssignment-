@@ -28,7 +28,7 @@ namespace rockPaperScissorsLizardSpock
         public void ChooseOpponent()
 
         {
-            Console.WriteLine("Pick one of the following to play against:" + Environment.NewLine + "1)Computer" + Environment.NewLine + "2) Another Player");
+            Console.WriteLine("Pick one of the following to play against:" + Environment.NewLine + "1) Computer" + Environment.NewLine + "2) Another Player");
             string gameChosen = Console.ReadLine();
             if (gameChosen.Equals("1"))
             {

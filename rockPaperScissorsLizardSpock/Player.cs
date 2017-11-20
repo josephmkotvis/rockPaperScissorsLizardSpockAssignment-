@@ -82,5 +82,9 @@ namespace rockPaperScissorsLizardSpock
             choice = "Spock";
             choiceNumber = 4;
         }
+        public void AddScore()
+        {
+            score++;
+        }
     }
 }
