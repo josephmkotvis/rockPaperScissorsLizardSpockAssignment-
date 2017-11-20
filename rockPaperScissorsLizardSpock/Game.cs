@@ -30,12 +30,12 @@ namespace rockPaperScissorsLizardSpock
         {
             if (player1.score == 2)
             {
-                Console.WriteLine("Congratulations!" + player1.name + " has become victorious! GG!");
+                Console.WriteLine("Congratulations! " + player1.name + " has become victorious! GG!");
                 winningCondition = true;
             }
             else if (player2.score == 2)
             {
-                Console.WriteLine("Congratulations!" + player2.name + " has become victorious! GG!");
+                Console.WriteLine("Congratulations! " + player2.name + " has become victorious! GG!");
                 winningCondition = true;
             }
         }
@@ -87,6 +87,7 @@ namespace rockPaperScissorsLizardSpock
             string playerReplayResponse = Console.ReadLine();
             if (playerReplayResponse == "y")
             {
+                ResetGame(player1, player2);
                 RunGame(player1, player2);
             }
             else if (playerReplayResponse == "n")
@@ -98,6 +99,12 @@ namespace rockPaperScissorsLizardSpock
                 Console.WriteLine("Please write y or n for your appropriate answer");
                 AskToPlayAgain(player1, player2);
             }
+        }
+        public void ResetGame(Player player1, Player2 player2)
+        {
+            winningCondition = false;
+            player1.ResetStats();
+            player2.ResetStats();
         }
     }
 }

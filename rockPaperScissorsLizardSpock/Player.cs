@@ -12,14 +12,16 @@ namespace rockPaperScissorsLizardSpock
         public string choice;
         public double choiceNumber;
         public double score = 0;
+        public double playerNumber;
 
 
-        public Player(string name, string choice, double choiceNumber, double score)
+        public Player(string name, string choice, double choiceNumber, double score, double playerNumber)
         {
             this.name = name;
             this.choice = choice;
             this.choiceNumber = choiceNumber;
             this.score = score;
+            this.playerNumber = playerNumber;
         }
 
         public void WritePlayerName()
@@ -85,6 +87,11 @@ namespace rockPaperScissorsLizardSpock
         public void AddScore()
         {
             score++;
+        }
+        public void ResetStats()
+        {
+            score = 0;
+            name = "Player"+ playerNumber;
         }
     }
 }

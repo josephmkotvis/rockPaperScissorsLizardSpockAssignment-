@@ -9,8 +9,8 @@ namespace rockPaperScissorsLizardSpock
     class Player2 : Player
     {
         public string status;
-        public Player2(string name, string choice, double choiceNumber, double score, string status)
-            : base(name, choice, choiceNumber, score)
+        public Player2(string name, string choice, double choiceNumber, double score, double playerNumber, string status)
+            : base(name, choice, choiceNumber, score, playerNumber)
         {
             this.status = status;
         }
@@ -41,6 +41,7 @@ namespace rockPaperScissorsLizardSpock
             else
             {
                 Console.WriteLine("Please choose the number associated with the game choice.");
+                ChooseOpponent();
             }
 
         }
