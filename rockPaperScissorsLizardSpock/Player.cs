@@ -29,7 +29,7 @@ namespace rockPaperScissorsLizardSpock
         }
         public void ChoosePlayerChoice()
         {
-            Console.WriteLine(name + ":" + Environment.NewLine + "Choose one of the following:" + Environment.NewLine + "1) Rock" + Environment.NewLine + "2) Paper" + Environment.NewLine + "3) Scissors" + Environment.NewLine + "4) Lizard" + Environment.NewLine + "5) Spock");
+            Console.WriteLine(name + ":" + Environment.NewLine + "Choose one of the following:" + Environment.NewLine + "1) Rock" + Environment.NewLine + "2) Paper" + Environment.NewLine + "3) Scissors" + Environment.NewLine + "4) Spock" + Environment.NewLine + "5) Lizard");
             char playerInput = Console.ReadKey(true).KeyChar;
             if (playerInput.Equals('1'))
             {
@@ -45,11 +45,11 @@ namespace rockPaperScissorsLizardSpock
             }
             else if (playerInput.Equals('4'))
             {
-                SetChoiceToLizard();
+                SetChoiceToSpock();
             }
             else if (playerInput.Equals('5'))
             {
-                SetChoiceToSpock();
+                SetChoiceToLizard();
             }
             else
             {
@@ -72,14 +72,14 @@ namespace rockPaperScissorsLizardSpock
             choice = "Scissors";
             choiceNumber = 2;
         }
-        public void SetChoiceToLizard()
-        {
-            choice = "Lizard";
-            choiceNumber = 3;
-        }
         public void SetChoiceToSpock()
         {
             choice = "Spock";
+            choiceNumber = 3;
+        }
+        public void SetChoiceToLizard()
+        {
+            choice = "Lizard";
             choiceNumber = 4;
         }
         public void AddScore()

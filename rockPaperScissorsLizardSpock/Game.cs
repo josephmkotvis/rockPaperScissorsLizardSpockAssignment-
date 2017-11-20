@@ -70,7 +70,7 @@ namespace rockPaperScissorsLizardSpock
         {
            if (roundWinner == "Player1")
             {
-                Console.WriteLine(player1.name + "has won this round with " + player1.choice + " against" + player2.name + "'s " + player2.choice + ".");
+                Console.WriteLine(player1.name + " has won this round with " + player1.choice + " against " + player2.name + "'s " + player2.choice + ".");
                 player1.AddScore();
             }
            else if (roundWinner == "Player2")
