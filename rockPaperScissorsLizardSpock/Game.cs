@@ -20,25 +20,20 @@ namespace rockPaperScissorsLizardSpock
                 SetPlayerScores(player1, player2);
                 WinningGameCondition(player1, player2);
             } while (winningCondition == false);
-
+            AskToPlayAgain(player1, player2);
         }
 
-        public bool WinningGameCondition(Player player1, Player2 player2)
+        public void WinningGameCondition(Player player1, Player2 player2)
         {
-            winningCondition = false;
             if (player1.score == 2)
             {
                 Console.WriteLine("Congratulations!" + player1.name + " has become victorious! GG!");
-                return true;
+                winningCondition = true;
             }
             else if (player2.score == 2)
             {
                 Console.WriteLine("Congratulations!" + player2.name + " has become victorious! GG!");
-                return true;
-            }
-            else
-            {
-                return false;
+                winningCondition = true;
             }
         }
         public void CheckChoices(Player player1, Player2 player2)
@@ -81,6 +76,24 @@ namespace rockPaperScissorsLizardSpock
             else if ( roundWinner == "Neither")
             {
                 Console.WriteLine("There was a tie with " + player1.name + "'s " + player1.choice + " against " + player2.name + "'s " + player2.choice + "! Try again.");
+            }
+        }
+        public void AskToPlayAgain(Player player1, Player2 player2)
+        {
+            Console.WriteLine("Would you like to play again? (y/n)";
+            string playerReplayResponse = Console.ReadLine();
+            if (playerReplayResponse == "y")
+            {
+                RunGame(player1, player2);
+            }
+            else if (playerReplayResponse == "n")
+            {
+                Console.WriteLine("Hope you had fun!");
+            }
+            else
+            {
+                Console.WriteLine("Please write y or n for your appropriate answer");
+                AskToPlayAgain(player1, player2);
             }
         }
     }
