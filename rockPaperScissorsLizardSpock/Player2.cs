@@ -43,7 +43,6 @@ namespace rockPaperScissorsLizardSpock
                 Console.WriteLine("Please choose the number associated with the game choice.");
                 ChooseOpponent();
             }
-
         }
         public void SetOpponentToComputer()
         {
