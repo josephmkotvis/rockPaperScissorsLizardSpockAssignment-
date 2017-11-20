@@ -8,7 +8,10 @@ namespace rockPaperScissorsLizardSpock
 {
     class Player
     {
-        //string name;
+        public string name;
+        public string choice;
+        public double choiceNumber;
+        public double score =0;
         
     }
 }
