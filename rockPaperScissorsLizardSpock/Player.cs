@@ -11,7 +11,76 @@ namespace rockPaperScissorsLizardSpock
         public string name;
         public string choice;
         public double choiceNumber;
-        public double score =0;
-        
+        public double score = 0;
+
+
+        public Player(string name, string choice, double choiceNumber, double score)
+        {
+            this.name = name;
+            this.choice = choice;
+            this.choiceNumber = choiceNumber;
+            this.score = score;
+        }
+
+        public void WritePlayerName()
+        {
+            Console.WriteLine(name + ", write your name.");
+            name = Console.ReadLine();
+        }
+        public void ChoosePlayerChoice()
+        {
+            Console.WriteLine(name + ":" + Environment.NewLine + "Choose one of the following:" + Environment.NewLine + "1) Rock" + Environment.NewLine + "2) Paper" + Environment.NewLine + "3) Scissors" + Environment.NewLine + "4) Lizard" + Environment.NewLine + "5) Spock");
+            char playerInput = Console.ReadKey(true).KeyChar;
+            if (playerInput.Equals('1'))
+            {
+                SetChoiceToRock();
+            }
+            else if (playerInput.Equals('2'))
+            {
+                SetChoiceToPaper();
+            }
+            else if (playerInput.Equals('3'))
+            {
+                SetChoiceToScissors();
+            }
+            else if (playerInput.Equals('4'))
+            {
+                SetChoiceToLizard();
+            }
+            else if (playerInput.Equals('5'))
+            {
+                SetChoiceToSpock();
+            }
+            else
+            {
+                Console.WriteLine("Please enter a correct number matching to your choise (1-5)");
+                ChoosePlayerChoice();
+            }
+        }
+        public void SetChoiceToRock()
+        {
+            choice = "Rock";
+            choiceNumber = 0;
+        }
+        public void SetChoiceToPaper()
+        {
+            choice = "Paper";
+            choiceNumber = 1;
+        }
+        public void SetChoiceToScissors()
+        {
+            choice = "Scissors";
+            choiceNumber = 2;
+        }
+        public void SetChoiceToLizard()
+        {
+            choice = "Lizard";
+            choiceNumber = 3;
+        }
+        public void SetChoiceToSpock()
+        {
+            choice = "Spock";
+            choiceNumber = 4;
+        }
     }
 }

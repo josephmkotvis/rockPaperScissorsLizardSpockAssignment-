@@ -10,10 +10,10 @@ namespace rockPaperScissorsLizardSpock
     {
         static void Main(string[] args)
         {
-            Player Player1 = new Player();
-            Player Player2 = new Player();
-            Game Practice = new Game();
-            Practice.ChooseGame();
+            Player Player1 = new Player("Player1", "Not Chosen", 0, 0);
+            Player2 Player2 = new Player2("Player2", "Not Chosen", 0, 0, "Not Confirmed");
+            Game Round = new Game();
+            Round.ChooseGame(Player1, Player2);
             Console.ReadKey();
 
         }
