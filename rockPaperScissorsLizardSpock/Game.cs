@@ -28,12 +28,12 @@ namespace rockPaperScissorsLizardSpock
             winningCondition = false;
             if (player1.score == 2)
             {
-                Console.WriteLine("Congratulations!" + player1.name + "has become victorious! GG!");
+                Console.WriteLine("Congratulations!" + player1.name + " has become victorious! GG!");
                 return true;
             }
             else if (player2.score == 2)
             {
-                Console.WriteLine("Congratulations!" + player2.name + "has become victorious! GG!");
+                Console.WriteLine("Congratulations!" + player2.name + " has become victorious! GG!");
                 return true;
             }
             else
