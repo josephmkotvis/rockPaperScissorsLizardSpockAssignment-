@@ -25,7 +25,6 @@ namespace rockPaperScissorsLizardSpock
             SetPlayerScores(player1, player2);
             WinningGameCondition(player1, player2);
         }
-
         public void WinningGameCondition(Player player1, Player2 player2)
         {
             if (player1.score == 2)
@@ -61,7 +60,6 @@ namespace rockPaperScissorsLizardSpock
             else
             {
                 roundWinner = "Neither";
-               
             }
         }
         public void SetPlayerScores(Player player1, Player2 player2)
