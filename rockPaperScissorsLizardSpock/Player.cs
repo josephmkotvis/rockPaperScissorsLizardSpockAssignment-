@@ -12,7 +12,7 @@ namespace rockPaperScissorsLizardSpock
         public string choice;
         public double choiceNumber;
         public double score = 0;
-        public double playerNumber;
+        protected double playerNumber;
         public Player(string name, string choice, double choiceNumber, double score, double playerNumber)
         {
             this.name = name;
@@ -56,27 +56,27 @@ namespace rockPaperScissorsLizardSpock
                 ChoosePlayerChoice();
             }
         }
-        public void SetChoiceToRock()
+        protected void SetChoiceToRock()
         {
             choice = "Rock";
             choiceNumber = 0;
         }
-        public void SetChoiceToPaper()
+        protected void SetChoiceToPaper()
         {
             choice = "Paper";
             choiceNumber = 1;
         }
-        public void SetChoiceToScissors()
+        protected void SetChoiceToScissors()
         {
             choice = "Scissors";
             choiceNumber = 2;
         }
-        public void SetChoiceToSpock()
+        protected void SetChoiceToSpock()
         {
             choice = "Spock";
             choiceNumber = 3;
         }
-        public void SetChoiceToLizard()
+        protected void SetChoiceToLizard()
         {
             choice = "Lizard";
             choiceNumber = 4;

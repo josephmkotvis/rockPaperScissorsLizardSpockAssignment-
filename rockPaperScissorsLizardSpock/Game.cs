@@ -4,8 +4,8 @@ namespace rockPaperScissorsLizardSpock
 {
     class Game
     {
-        string roundWinner;
-        public bool winningCondition = false;
+       private  string roundWinner;
+        private bool winningCondition = false;
 
         public void RunGame(Player player1, Player2 player2)
         {
@@ -17,7 +17,7 @@ namespace rockPaperScissorsLizardSpock
             } while (winningCondition == false);
             AskToPlayAgain(player1, player2);
         }
-        public void RunRound(Player player1, Player2 player2)
+        private void RunRound(Player player1, Player2 player2)
         {
             player1.ChoosePlayerChoice();
             player2.CheckPlayer2Status();
@@ -25,7 +25,7 @@ namespace rockPaperScissorsLizardSpock
             SetPlayerScores(player1, player2);
             WinningGameCondition(player1, player2);
         }
-        public void WinningGameCondition(Player player1, Player2 player2)
+        private void WinningGameCondition(Player player1, Player2 player2)
         {
             if (player1.score == 2)
             {
@@ -38,7 +38,7 @@ namespace rockPaperScissorsLizardSpock
                 winningCondition = true;
             }
         }
-        public void CheckChoices(Player player1, Player2 player2)
+        private void CheckChoices(Player player1, Player2 player2)
         {
             double roundWinnerChecked = ((5 + player1.choiceNumber - player2.choiceNumber) % 5);
             if (roundWinnerChecked == 1)
@@ -62,7 +62,7 @@ namespace rockPaperScissorsLizardSpock
                 roundWinner = "Neither";
             }
         }
-        public void SetPlayerScores(Player player1, Player2 player2)
+        private void SetPlayerScores(Player player1, Player2 player2)
         {
            if (roundWinner == "Player1")
             {
@@ -79,7 +79,7 @@ namespace rockPaperScissorsLizardSpock
                 Console.WriteLine(Environment.NewLine + "There was a tie with " + player1.name + "'s " + player1.choice + " against " + player2.name + "'s " + player2.choice + "! Try again.");
             }
         }
-        public void AskToPlayAgain(Player player1, Player2 player2)
+        private void AskToPlayAgain(Player player1, Player2 player2)
         {
             Console.WriteLine("Would you like to play again? (y/n)");
             string playerReplayResponse = Console.ReadLine();
@@ -90,15 +90,15 @@ namespace rockPaperScissorsLizardSpock
             }
             else if (playerReplayResponse == "n")
             {
-                Console.WriteLine("Hope you had fun!");
+                Console.WriteLine(Environment.NewLine + "Hope you had fun!");
             }
             else
             {
-                Console.WriteLine("Please write y or n for your appropriate answer");
+                Console.WriteLine(Environment.NewLine + "Please write y or n for your appropriate answer");
                 AskToPlayAgain(player1, player2);
             }
         }
-        public void ResetGame(Player player1, Player2 player2)
+        private void ResetGame(Player player1, Player2 player2)
         {
             winningCondition = false;
             player1.ResetStats();

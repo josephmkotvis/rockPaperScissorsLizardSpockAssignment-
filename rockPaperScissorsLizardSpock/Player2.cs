@@ -14,7 +14,7 @@ namespace rockPaperScissorsLizardSpock
         {
             this.status = status;
         }
-        public void CheckPlayer2Status()
+         public void CheckPlayer2Status()
         {
             if (status == "Player2")
             {
@@ -44,17 +44,17 @@ namespace rockPaperScissorsLizardSpock
                 ChooseOpponent();
             }
         }
-        public void SetOpponentToComputer()
+        void SetOpponentToComputer()
         {
             status = "Computer";
             name = "Computer";
         }
-        public void SetOpponentToPlayer()
+        void SetOpponentToPlayer()
         {
             WritePlayerName();
             status = "Player2";
         }
-        public void ChooseComputerChoice()
+        void ChooseComputerChoice()
         {
             Random luck = new Random();
             int randomComputerChoice = luck.Next(0, 5);
