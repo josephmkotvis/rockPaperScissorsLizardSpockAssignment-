@@ -57,28 +57,23 @@ namespace rockPaperScissorsLizardSpock
         public void ChooseComputerChoice()
         {
             Random luck = new Random();
-            int randomComputerChoice = luck.Next(1, 5);
+            int randomComputerChoice = luck.Next(0, 5);
             switch (randomComputerChoice)
             {
+                case 0:
+                    SetChoiceToRock();
+                    break;
                 case 1:
-                    choice = "Rock";
-                    choiceNumber = 0;
+                    SetChoiceToPaper();
                     break;
                 case 2:
-                    choice = "Paper";
-                    choiceNumber = 1;
+                    SetChoiceToScissors();
                     break;
                 case 3:
-                    choice = "Scissors";
-                    choiceNumber = 2;
+                    SetChoiceToSpock();
                     break;
                 case 4:
-                    choice = "Spock";
-                    choiceNumber = 3;
-                    break;
-                case 5:
-                    choice = "Lizard";
-                    choiceNumber = 4;
+                    SetChoiceToLizard();
                     break;
             }
         }

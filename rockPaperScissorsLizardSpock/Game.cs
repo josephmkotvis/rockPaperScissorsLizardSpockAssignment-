@@ -11,16 +11,19 @@ namespace rockPaperScissorsLizardSpock
         {
             player1.WritePlayerName();
             player2.ChooseOpponent();
-
             do
             {
-                player1.ChoosePlayerChoice();
-                player2.CheckPlayer2Status();
-                CheckChoices(player1, player2);
-                SetPlayerScores(player1, player2);
-                WinningGameCondition(player1, player2);
+                RunRound(player1, player2);
             } while (winningCondition == false);
             AskToPlayAgain(player1, player2);
+        }
+        public void RunRound(Player player1, Player2 player2)
+        {
+            player1.ChoosePlayerChoice();
+            player2.CheckPlayer2Status();
+            CheckChoices(player1, player2);
+            SetPlayerScores(player1, player2);
+            WinningGameCondition(player1, player2);
         }
 
         public void WinningGameCondition(Player player1, Player2 player2)
